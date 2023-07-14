@@ -7,8 +7,12 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/featurefiles"
-        , glue = {"com.awa.stepdefinitions" }, tags = "@Test",dryRun = false , monochrome = true , plugin = { "pretty", "html:target/cucumber-reports" }
+        features = "src/test/resources/featurefiles",
+        glue = {"com.awa.stepdefinitions", "com.awa.hooks"},
+        tags = "@Test",
+        dryRun = false,
+        monochrome = true,
+        plugin = {"pretty", "html:target/cucumber-reports"}
 )
 public class TestRunner {
 
